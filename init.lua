@@ -920,15 +920,6 @@ require('lazy').setup({
     end,
   },
 
-  -- {
-  --   'okuuva/auto-save.nvim',
-  --   cmd = 'ASToggle', -- optional for lazy loading on command
-  --   event = { 'InsertLeave', 'TextChanged' }, -- optional for lazy loading on trigger events
-  --   opts = {
-  --     -- your config goes here
-  --     -- or just leave it empty :)
-  --   },
-  -- },
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
