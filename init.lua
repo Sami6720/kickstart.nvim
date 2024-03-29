@@ -222,6 +222,18 @@ _G.addLineBelow = function()
 end
 vim.api.nvim_set_keymap('n', '<C-Enter>', '<cmd>lua addLineBelow()<CR>', { noremap = true, silent = true, desc='Add line below' })
 
+-- See git hunk preview
+_G.preview_hunk_inline = function()
+  vim.api.nvim_command 'Gitsigns preview_hunk_inline'
+end
+vim.api.nvim_set_keymap('n', '<C-g>p', '<cmd>lua preview_hunk_inline()<CR>', { noremap = true, silent = true, desc='Preview git hunk'})
+
+-- Reset git  hunk
+_G.reset_hunk = function()
+  vim.api.nvim_command 'Gitsigns reset_hunk'
+end
+vim.api.nvim_set_keymap('n', '<C-g>r', '<cmd>lua reset_hunk()<CR>', { noremap = true, silent = true, desc='Reset git hunk'})
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
