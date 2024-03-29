@@ -936,12 +936,18 @@ require('lazy').setup({
       vim.keymap.set('n', '<leader>h', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
       end, { desc = 'Toggle Harpoon Quick Menu' })
-      vim.keymap.set('n', '<S-p>', function()
+      vim.keymap.set('n', '<S-h>', function()
         harpoon:list():select(1)
       end, { desc = 'Select 1st Harpoon item' })
-      vim.keymap.set('n', '<S-n>', function()
+      vim.keymap.set('n', '<S-j>', function()
         harpoon:list():select(2)
       end, { desc = 'Select 2nd Harpoon item' })
+      vim.keymap.set('n', '<S-l>', function()
+        harpoon:list():select(3)
+      end, { desc = 'Select 3rd Harpoon item' })
+      vim.keymap.set('n', '<S-p>', function()
+        harpoon:list():select(4)
+      end, { desc = 'Select 4th Harpoon item' })
 
       -- TODO: Remember to remove choose keybinds for the following.
 
