@@ -209,6 +209,19 @@ vim.keymap.set('x', '<leader>p', [["_dP]])
 vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<nop>')
 
+-- mine
+
+-- Add a line below without moving the cursor
+_G.addLineBelow = function()
+  -- Save current cursor position
+  local previous_pos = vim.api.nvim_win_get_cursor(0)
+  -- Add line below
+  vim.api.nvim_command 'normal! o'
+  -- Restore cursor position
+  vim.api.nvim_win_set_cursor(0, previous_pos)
+end
+vim.api.nvim_set_keymap('n', '<C-Enter>', '<cmd>lua addLineBelow()<CR>', { noremap = true, silent = true, desc='Add line below' })
+
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
 
