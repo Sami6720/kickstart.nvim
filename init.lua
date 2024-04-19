@@ -212,7 +212,7 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- mine
-
+vim.api.nvim_set_keymap('n', '<leader>pm', ':ProjectMgr<CR>', { desc = 'Open Project Manager' })
 -- Add a line below without moving the cursor
 _G.addLineBelow = function()
   -- Save current cursor position
@@ -970,6 +970,13 @@ require('lazy').setup({
     end,
   },
 
+  {
+    'charludo/projectmgr.nvim',
+    lazy = false, -- important!
+    -- <C-a> - Add a new project
+    -- <C-d> - Delete a project
+    -- <C-e> - Edit a project
+  },
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
