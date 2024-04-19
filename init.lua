@@ -214,6 +214,8 @@ vim.keymap.set('n', 'Q', '<nop>')
 -- mine
 vim.api.nvim_set_keymap('n', '<leader>pm', ':ProjectMgr<CR>', { desc = 'Open Project Manager' })
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { desc = 'Toggle Undo Tree' })
+vim.api.nvim_set_keymap('n', '<leader>la', ':LazyGit<CR>', { desc = 'Toggle complete lazygit for repo' })
+vim.api.nvim_set_keymap('n', '<leader>lc', ':LazyGitCurrentFile<CR>', { desc = 'Toggle lazygit for current file' })
 -- Add a line below without moving the cursor
 _G.addLineBelow = function()
   -- Save current cursor position
@@ -983,6 +985,11 @@ require('lazy').setup({
     'mbbill/undotree',
     lazy = false, -- important!
   },
+
+  {
+    'kdheepak/lazygit.nvim',
+  },
+
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
