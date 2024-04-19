@@ -223,7 +223,7 @@ _G.addLineBelow = function()
   -- Restore cursor position
   vim.api.nvim_win_set_cursor(0, previous_pos)
 end
-vim.api.nvim_set_keymap('n', '<C-Enter>', '<cmd>lua addLineBelow()<CR>', { noremap = true, silent = true, desc='Add line below' })
+vim.api.nvim_set_keymap('n', '<C-Enter>', '<cmd>lua addLineBelow()<CR>', { noremap = true, silent = true, desc = 'Add line below' })
 
 -- See git hunk preview
 _G.preview_hunk_inline = function()
