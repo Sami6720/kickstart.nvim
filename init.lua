@@ -834,13 +834,13 @@ require('lazy').setup({
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup {
         mappings = {
-          add = 'fa', -- Add surrounding in Normal and Visual modes
-          delete = 'fd', -- Delete surrounding
-          find = 'ff', -- Find surrounding (to the right)
-          find_left = 'fF', -- Find surrounding (to the left)
-          highlight = 'fh', -- Highlight surrounding
-          replace = 'fr', -- Replace surrounding
-          update_n_lines = 'fn', -- Update `n_lines`
+          add = 'ja', -- Add surrounding in Normal and Visual modes
+          delete = 'jd', -- Delete surrounding
+          find = 'jf', -- Find surrounding (to the right)
+          find_left = 'jF', -- Find surrounding (to the left)
+          highlight = 'jh', -- Highlight surrounding
+          replace = 'jr', -- Replace surrounding
+          update_n_lines = 'jn', -- Update `n_lines`
 
           suffix_last = 'l', -- Suffix to search with "prev" method
           suffix_next = 'n', -- Suffix to search with "next" method
