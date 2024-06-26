@@ -973,14 +973,6 @@ require('lazy').setup({
   },
 
   {
-    'charludo/projectmgr.nvim',
-    lazy = false, -- important!
-    -- <C-a> - Add a new project
-    -- <C-d> - Delete a project
-    -- <C-e> - Edit a project
-  },
-
-  {
     'mbbill/undotree',
     lazy = false, -- important!
   },
