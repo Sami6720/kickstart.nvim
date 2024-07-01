@@ -906,21 +906,6 @@ require('lazy').setup({
   -- put them in the right spots if you want.
 
   -- NOTE: Next step on your Neovim journey: Add/Configure additional plugins for kickstart
-  {
-
-    'ggandor/leap.nvim',
-
-    opts = {
-      labels = 'sfnjklhodwembuyvrgtaqpcxzSFNJKLHODWEMBUYVRGTAQPCXZ',
-    },
-
-    config = function()
-      require('leap').create_default_mappings()
-      require('leap').opts.special_keys.prev_target = '<bs>'
-      require('leap').opts.special_keys.prev_group = '<bs>'
-      require('leap.user').set_repeat_keys('<cr>', '<bs>')
-    end,
-  },
 
   {
     'ThePrimeagen/harpoon',
