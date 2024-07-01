@@ -603,6 +603,8 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
+
+        yamlls = {},
         clangd = {},
         -- gopls = {},
         pyright = {},
@@ -648,6 +650,7 @@ require('lazy').setup({
         'black',
         'pyright',
         'autopep8',
+        'yamlls',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 
@@ -684,6 +687,7 @@ require('lazy').setup({
         lua = { 'stylua' },
         -- Conform can also run multiple formatters sequentially
         python = { 'autopep8' },
+        yaml = { 'yamlls' },
         --
         -- You can use a sub-list to tell conform to run *until* a formatter
         -- is found.
@@ -920,7 +924,6 @@ require('lazy').setup({
       require('leap.user').set_repeat_keys('<cr>', '<bs>')
     end,
   },
-
 
   {
     'ThePrimeagen/harpoon',
