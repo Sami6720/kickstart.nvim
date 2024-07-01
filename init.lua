@@ -920,7 +920,7 @@ require('lazy').setup({
 
       -- Keybinds for Harpoon
       vim.keymap.set('n', '<leader>a', function()
-        harpoon:list():append()
+        harpoon:list():add()
       end, { desc = 'Append Harpoon item' })
       vim.keymap.set('n', '<leader>h', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
