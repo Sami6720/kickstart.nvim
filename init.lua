@@ -995,6 +995,18 @@ require('lazy').setup({
     'mfussenegger/nvim-dap',
     config = function(_, opts)
       vim.api.nvim_set_keymap('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, silent = true })
+      vim.keymap.set('n', '<F5>', function()
+        require('dap').continue()
+      end)
+      vim.keymap.set('n', '<F10>', function()
+        require('dap').step_over()
+      end)
+      vim.keymap.set('n', '<F11>', function()
+        require('dap').step_into()
+      end)
+      vim.keymap.set('n', '<F12>', function()
+        require('dap').step_out()
+      end)
     end,
   },
 
@@ -1009,7 +1021,7 @@ require('lazy').setup({
     config = function(_, opts)
       local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
       require('dap-python').setup(path)
-      vim.api.nvim_set_keymap('n', '<leader>dpr', '<cmd>lua require("dap-python").test_method()<CR>', { noremap = true, silent = true })
+      vim.api.nvim_set_keymap('n', '<leader>dpr', '<cmd>DapContinue<CR>', { noremap = true, silent = true })
     end,
   },
 
