@@ -980,7 +980,7 @@ require('lazy').setup({
     'mfussenegger/nvim-dap',
     config = function(_, opts)
       vim.api.nvim_set_keymap('n', '<leader>db', '<cmd>DapToggleBreakpoint<CR>', { noremap = true, silent = true })
-      vim.keymap.set('n', '<F5>', function()
+      vim.keymap.set('n', '<F4>', function()
         require('dap').continue()
       end)
       vim.keymap.set('n', '<F10>', function()
