@@ -1015,11 +1015,6 @@ require('lazy').setup({
     lazy = false, -- important!
   },
 
-  -- nvim v0.8.0
-  {
-    'kdheepak/lazygit.nvim',
-  },
-
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
