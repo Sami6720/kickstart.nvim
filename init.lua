@@ -212,7 +212,6 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- mine
-vim.api.nvim_set_keymap('n', '<leader>pm', ':ProjectMgr<CR>', { desc = 'Open Project Manager' })
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { desc = 'Toggle Undo Tree' })
 vim.api.nvim_set_keymap('n', '<leader>la', ':LazyGit<CR>', { desc = 'Toggle complete lazygit for repo' })
 vim.api.nvim_set_keymap('n', '<leader>lc', ':LazyGitCurrentFile<CR>', { desc = 'Toggle lazygit for current file' })
