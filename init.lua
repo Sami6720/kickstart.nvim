@@ -216,6 +216,8 @@ vim.api.nvim_set_keymap('n', '<leader>pm', ':ProjectMgr<CR>', { desc = 'Open Pro
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { desc = 'Toggle Undo Tree' })
 vim.api.nvim_set_keymap('n', '<leader>la', ':LazyGit<CR>', { desc = 'Toggle complete lazygit for repo' })
 vim.api.nvim_set_keymap('n', '<leader>lc', ':LazyGitCurrentFile<CR>', { desc = 'Toggle lazygit for current file' })
+vim.api.nvim_set_keymap('v', '<', '<gv', { noremap = true, silent = true })
+vim.api.nvim_set_keymap('v', '>', '>gv', { noremap = true, silent = true })
 -- Add a line below without moving the cursor
 _G.addLineBelow = function()
   -- Save current cursor position
