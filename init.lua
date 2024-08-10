@@ -241,6 +241,14 @@ _G.reset_hunk = function()
 end
 vim.api.nvim_set_keymap('n', '<C-g>r', '<cmd>lua reset_hunk()<CR>', { noremap = true, silent = true, desc = 'Reset git hunk' })
 
+-- Replace ^M with nothing when pasting
+_G.clear_M = function()
+  local status, err = pcall(function()
+  vim.api.nvim_command '%s/\r//g'
+  end)
+end
+vim.api.nvim_set_keymap('n', 'cm', '<cmd>lua clear_M()<CR>', { noremap = true, silent = true, desc = 'Clear ^M chars' })
+
 -- MY USER COMMANDS
 
 vim.api.nvim_create_user_command('F', function(args)
