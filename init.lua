@@ -416,7 +416,7 @@ require('lazy').setup({
           -- mappings = {
           --   i = { ['<c-enter>'] = 'to_fuzzy_refine' },
           -- },
-          file_ignore_patterns = {"virtualenv", "flash%-attention/.*"}
+          file_ignore_patterns = { 'virtualenv', 'flash%-attention/.*' },
         },
         -- pickers = {}
         extensions = {
