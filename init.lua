@@ -244,7 +244,7 @@ vim.api.nvim_set_keymap('n', '<C-g>r', '<cmd>lua reset_hunk()<CR>', { noremap = 
 -- Replace ^M with nothing when pasting
 _G.clear_M = function()
   local status, err = pcall(function()
-  vim.api.nvim_command '%s/\r//g'
+    vim.api.nvim_command '%s/\r//g'
   end)
 end
 vim.api.nvim_set_keymap('n', 'cm', '<cmd>lua clear_M()<CR>', { noremap = true, silent = true, desc = 'Clear ^M chars' })
@@ -885,7 +885,7 @@ require('lazy').setup({
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'python'},
+      ensure_installed = { 'bash', 'c', 'html', 'lua', 'markdown', 'vim', 'vimdoc', 'java', 'python' },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
