@@ -616,6 +616,7 @@ require('lazy').setup({
         clangd = {},
         -- gopls = {},
         pylsp = {},
+        jdtls = {},
         -- rust_analyzer = {},
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -1047,6 +1048,8 @@ require('lazy').setup({
       }
     end,
   },
+
+  { 'mfussenegger/nvim-jdtls' },
 
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
