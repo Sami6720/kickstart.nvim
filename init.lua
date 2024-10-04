@@ -346,6 +346,28 @@ require('lazy').setup({
   -- Then, because we use the `config` key, the configuration only runs
   -- after the plugin has been loaded:
   --  config = function() ... end
+  --
+  --
+  {
+    'jose-elias-alvarez/null-ls.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
+    config = function()
+      local null_ls = require 'null-ls'
+
+      -- Define the sources for null-ls
+      local sources = {
+        null_ls.builtins.diagnostics.checkstyle.with {
+          extra_args = { '-c', '/home/sami6720/myprojs/COMP303Starter/style/Style.xml' }, -- Replace with the path to your Checkstyle configuration
+        },
+      }
+
+      -- Setup null-ls with the defined sources
+      null_ls.setup {
+        sources = sources,
+        -- Add any other configuration options here if needed
+      }
+    end,
+  },
 
   { -- Useful plugin to show you pending keybinds.
     'folke/which-key.nvim',
