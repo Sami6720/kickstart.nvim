@@ -1072,10 +1072,14 @@ require('lazy').setup({
     end,
   },
 
-  { 'mfussenegger/nvim-jdtls', dependencies = {
+  {
+    'mfussenegger/nvim-jdtls',
+    dependencies = {
 
-    'mfussenegger/nvim-dap',
-  } },
+      'mfussenegger/nvim-dap',
+    },
+  },
+
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
     lazy = true,
