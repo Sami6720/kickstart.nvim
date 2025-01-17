@@ -793,6 +793,7 @@ require('lazy').setup({
         },
         sources = {
           { name = 'nvim_lsp' },
+          { name = 'nvim_lsp_signature_help' },
           { name = 'luasnip' },
           { name = 'path' },
         },
@@ -1151,6 +1152,12 @@ require('lazy').setup({
       vim.keymap.set({ 'n', 'x', 'o' }, 'T', ts_repeat_move.builtin_T)
     end,
   },
+
+  {
+    'hrsh7th/cmp-nvim-lsp-signature-help',
+    dependencies = { 'hrsh7th/nvim-cmp' },
+  },
+
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
