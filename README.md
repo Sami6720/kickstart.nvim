@@ -52,7 +52,7 @@ Clone kickstart.nvim:
 <details><summary> Linux and Mac </summary>
 
 ```sh
-git clone https://github.com/nvim-lua/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
+git clone git@github.com:Sami6720/kickstart.nvim.git "${XDG_CONFIG_HOME:-$HOME/.config}"/nvim
 ```
 
 </details>
@@ -75,7 +75,7 @@ git clone https://github.com/nvim-lua/kickstart.nvim.git $env:USERPROFILE\AppDat
 
 ### Post Installation
 
-Start Neovim
+Start Neovim (MAKE SURE YOU SWITCH TO THE CORRECT BRANCH)
 
 ```sh
 nvim
