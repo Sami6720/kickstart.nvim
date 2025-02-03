@@ -277,6 +277,18 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "python",
+    callback = function()
+      vim.bo.expandtab = false   -- Use tabs, not spaces
+      vim.bo.tabstop = 4         -- Tab width = 4 spaces (change as needed)
+      vim.bo.shiftwidth = 4      -- Indent with 4 spaces
+      vim.bo.softtabstop = 4     -- Backspace over 4 spaces at a time
+    end,
+})
+
+
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
@@ -547,6 +559,19 @@ require('lazy').setup({
       vim.api.nvim_create_autocmd('LspAttach', {
         group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),
         callback = function(event)
+          -- Configure diagnostics to only show errors (disable warnings, hints, and info)
+          vim.diagnostic.config {
+            virtual_text = {
+              severity = { min = vim.diagnostic.severity.ERROR }, -- Show only errors in virtual text
+            },
+            signs = {
+              severity = { min = vim.diagnostic.severity.ERROR }, -- Show only errors in the sign column
+            },
+            underline = {
+              severity = { min = vim.diagnostic.severity.ERROR }, -- Underline only errors
+            },
+            update_in_insert = false, -- Optional: Don't update diagnostics while typing
+          }
           -- NOTE: Remember that lua is a real programming language, and as such it is possible
           -- to define small helper and utility functions so you don't have to repeat yourself
           -- many times.
