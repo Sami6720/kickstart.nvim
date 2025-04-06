@@ -105,7 +105,7 @@ vim.opt.number = true
 vim.opt.relativenumber = true
 
 -- Enable mouse mode, can be useful for resizing splits for example!
-vim.opt.mouse = 'a'
+vim.opt.mouse = ''
 
 -- Don't show the mode, since it's already in status line
 vim.opt.showmode = false
@@ -113,7 +113,7 @@ vim.opt.showmode = false
 -- Sync clipboard between OS and Neovim.
 --  Remove this option if you want your OS clipboard to remain independent.
 --  See `:help 'clipboard'`
-vim.opt.clipboard = 'unnamedplus'
+-- vim.opt.clipboard = 'unnamedplus'
 
 -- Enable break indent
 vim.opt.breakindent = true
@@ -268,17 +268,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
-
-vim.api.nvim_create_autocmd("FileType", {
-    pattern = "python",
-    callback = function()
-      vim.bo.expandtab = false   -- Use tabs, not spaces
-      vim.bo.tabstop = 4         -- Tab width = 4 spaces (change as needed)
-      vim.bo.shiftwidth = 4      -- Indent with 4 spaces
-      vim.bo.softtabstop = 4     -- Backspace over 4 spaces at a time
-    end,
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = 'python',
+  callback = function()
+    vim.bo.expandtab = true -- Use tabs, not spaces
+    vim.bo.tabstop = 4 -- Tab width = 4 spaces (change as needed)
+    vim.bo.shiftwidth = 4 -- Indent with 4 spaces
+    vim.bo.softtabstop = 4 -- Backspace over 4 spaces at a time
+  end,
 })
-
 
 -- [[ Install `lazy.nvim` plugin manager ]]
 --    See `:help lazy.nvim.txt` or https://github.com/folke/lazy.nvim for more info
@@ -440,6 +438,7 @@ require('lazy').setup({
 
             '^./worktree.*',
             '.*2024.*',
+            'venv',
           },
         },
         -- pickers = {}
@@ -961,7 +960,7 @@ require('lazy').setup({
 
       -- Keybinds for Harpoon
       vim.keymap.set('n', '<leader>a', function()
-        harpoon:list():add()
+        harpoon:list():prepend()
       end, { desc = 'Append Harpoon item' })
       vim.keymap.set('n', '<leader>h', function()
         harpoon.ui:toggle_quick_menu(harpoon:list())
@@ -1047,6 +1046,9 @@ require('lazy').setup({
     config = function(_, opts)
       local path = '~/.local/share/nvim/mason/packages/debugpy/venv/bin/python'
       require('dap-python').setup(path)
+      table.insert(require('dap').configurations.python, {
+        justMyCode = false,
+      })
       vim.api.nvim_set_keymap('n', '<leader>dpr', '<cmd>DapContinue<CR>', { noremap = true, silent = true })
     end,
   },
