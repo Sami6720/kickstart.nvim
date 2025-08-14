@@ -212,6 +212,9 @@ vim.keymap.set('i', '<C-c>', '<Esc>')
 vim.keymap.set('n', 'Q', '<nop>')
 
 -- mine
+vim.api.nvim_create_user_command("E", function()
+  require("oil").open()
+  end, {})
 vim.api.nvim_set_keymap('n', '<leader>u', ':UndotreeToggle<CR>', { desc = 'Toggle Undo Tree' })
 vim.api.nvim_set_keymap('n', '<leader>la', ':LazyGit<CR>', { desc = 'Toggle complete lazygit for repo' })
 vim.api.nvim_set_keymap('n', '<leader>lc', ':LazyGitCurrentFile<CR>', { desc = 'Toggle lazygit for current file' })
@@ -433,7 +436,6 @@ require('lazy').setup({
             '.*pycache.*',
             'temp_job_scripts',
             '.*pkl.*',
-            '.*results.*',
             '^./models/.*',
 
             '^./worktree.*',
@@ -1196,6 +1198,18 @@ require('lazy').setup({
     'hrsh7th/cmp-nvim-lsp-signature-help',
     dependencies = { 'hrsh7th/nvim-cmp' },
   },
+
+  {
+    'stevearc/oil.nvim',
+    ---@module 'oil'
+    ---@type oil.SetupOpts
+    opts = {},
+    -- Optional dependencies
+    dependencies = { { "echasnovski/mini.icons", opts = {} } },
+    -- dependencies = { "nvim-tree/nvim-web-devicons" }, -- use if you prefer nvim-web-devicons
+    -- Lazy loading is not recommended because it is very tricky to make it work correctly in all situations.
+    lazy = false,
+  }
 
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
