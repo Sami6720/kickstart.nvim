@@ -1,5 +1,11 @@
 # kickstart.nvim
 
+## For Rorqual
+
+- Had to update to version 0.11
+- Make sure to put everything from share, lib, and bin once extracted from the nvim repo in .local/bin
+- module load npm to allow mason install pywright, yamml-server
+
 ## Introduction
 
 A starting point for Neovim that is:
