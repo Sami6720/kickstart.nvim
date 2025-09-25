@@ -1211,6 +1211,8 @@ require('lazy').setup({
     lazy = false,
   },
 
+{ "nvim-tree/nvim-web-devicons", opts = {} },
+
   --  Here are some example plugins that I've included in the kickstart repository.
   --  Uncomment any of the lines below to enable them (you will need to restart nvim).
   --
