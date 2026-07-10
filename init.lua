@@ -1247,6 +1247,41 @@ require('lazy').setup({
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   --    For additional information, see `:help lazy.nvim-lazy.nvim-structuring-your-plugins`
   -- { import = 'custom.plugins' },
+  --
+  --
+  --
+,
+
+{
+  "yetone/avante.nvim",
+  event = "VeryLazy",
+  version = false, -- never pin to "*", track main
+  build = "make",  -- Windows: "powershell -ExecutionPolicy Bypass -File Build.ps1 -BuildFromSource false"
+  opts = {
+    provider = "gemini",
+    providers = {
+      gemini = {
+        endpoint = "https://generativelanguage.googleapis.com/v1beta/models",
+        model = "gemini-flash-latest",
+        timeout = 30000,
+        context_window = 1048576,
+      },
+    },
+  },
+  dependencies = {
+    "nvim-lua/plenary.nvim",
+    "MunifTanjim/nui.nvim",
+    "nvim-tree/nvim-web-devicons", -- you already have this
+    "stevearc/dressing.nvim",      -- nicer input prompts, optional
+    {
+      "MeanderingProgrammer/render-markdown.nvim",
+      opts = { file_types = { "markdown", "Avante" } },
+      ft = { "markdown", "Avante" },
+    },
+  },
+}
+
+
 }, {})
 
 -- The line beneath this is called `modeline`. See `:help modeline`
