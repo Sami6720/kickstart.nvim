@@ -90,6 +90,17 @@ P.S. You can delete this when you're done too. It's your config now! :)
 vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
+
+-- Disable default Tab mapping if you haven't already
+vim.g.copilot_no_tab_map = true
+
+-- Map <C-l> to accept Copilot suggestion
+vim.keymap.set('i', '<C-l>', 'copilot#Accept("<CR>")', {
+  expr = true,
+  replace_keycodes = false,
+  silent = true
+})
+
 -- Set to true if you have a Nerd Font installed
 vim.g.have_nerd_font = false
 
@@ -1279,7 +1290,31 @@ require('lazy').setup({
       ft = { "markdown", "Avante" },
     },
   },
-}
+  keys = {
+    -- Core loop
+    { "<leader>va", "<cmd>AvanteAsk<CR>", mode = { "n", "v" }, desc = "[V]ante [A]sk" },
+    { "<leader>ve", "<cmd>AvanteEdit<CR>", mode = "v", desc = "[V]ante [E]dit selection" },
+    { "<leader>vt", "<cmd>AvanteToggle<CR>", desc = "[V]ante [T]oggle sidebar" },
+    { "<leader>vf", "<cmd>AvanteFocus<CR>", desc = "[V]ante [F]ocus sidebar" },
+    { "<leader>vs", "<cmd>AvanteStop<CR>", desc = "[V]ante [S]top generation" },
+    { "<leader>vr", "<cmd>AvanteRefresh<CR>", desc = "[V]ante [R]efresh windows" },
+
+    -- Chat sessions
+    { "<leader>vc", "<cmd>AvanteChat<CR>", desc = "[V]ante [C]hat" },
+    { "<leader>vn", "<cmd>AvanteChatNew<CR>", desc = "[V]ante [N]ew chat" },
+    { "<leader>vh", "<cmd>AvanteHistory<CR>", desc = "[V]ante [H]istory" },
+    { "<leader>vx", "<cmd>AvanteClear<CR>", desc = "[V]ante Clear history" },
+
+    -- Config / provider
+    { "<leader>vm", "<cmd>AvanteModels<CR>", desc = "[V]ante [M]odel picker" },
+    { "<leader>vp", "<cmd>AvanteSwitchProvider<CR>", desc = "[V]ante switch [P]rovider" },
+    { "<leader>vR", "<cmd>AvanteShowRepoMap<CR>", desc = "[V]ante [R]epo map" },
+  },
+},
+
+{
+      "github/copilot.vim",
+  }
 
 
 }, {})
